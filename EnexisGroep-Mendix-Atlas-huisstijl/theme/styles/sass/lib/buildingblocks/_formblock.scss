@@ -1,0 +1,33 @@
+/* ==========================================================================
+   Form Block
+
+   Used in default forms
+========================================================================== */
+.formblock {
+	margin-bottom: ($spacing-number * 2);
+	margin-top: ($spacing-number * 2);
+}
+.formblock-title {
+    color: $color-default;
+	border-bottom: 4px solid $color-layout-bg-white;
+	margin-bottom: ($spacing-number * 2);
+	padding-bottom: ($spacing-number / 2);
+	font-size: $font-size-large;
+	line-height: 1.333em;;
+}
+.formblock-header {
+	color: $color-default;
+	border-bottom: 4px solid $color-layout-bg-white;
+	margin-bottom: ($spacing-number * 2);
+	padding-bottom: ($spacing-number / 2);
+	font-size: $font-size-large;
+	line-height: 1.333em;
+}
+.card .formblock-header,
+.card .formblock-title {
+	border-bottom: 4px solid $border-color-default;
+}
+.card .card .formblock-header,
+.card .card .formblock-title {
+	border-bottom: 4px solid $color-layout-bg-white;
+}

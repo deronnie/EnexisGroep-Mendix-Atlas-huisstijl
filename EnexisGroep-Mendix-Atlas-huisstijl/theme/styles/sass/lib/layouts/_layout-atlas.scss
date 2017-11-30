@@ -1,0 +1,443 @@
+/* ==========================================================================
+   Atlas layout
+   
+   The core stucture of all atlas layouts
+========================================================================== */
+.layout-atlas {
+
+    // Toggle button
+    .toggle-btn > .glyphicon {
+        margin: 0;
+    }
+
+    // Sidebar
+    .region-sidebar {
+        background-color: $navsidebar-bg;
+        
+        .mx-navigationtree .navbar-inner > ul > li > a {
+            padding: 0 15px;
+        
+            .glyphicon {
+                margin-right: 10px;
+            }
+        }
+        .toggle-btn {
+            border-color: transparent;
+            border-radius: 0;
+            background: transparent;
+        }
+    }
+
+    // Topbar
+    > .btn-inverse {
+        background-color: $btn-default-bg;
+        color: $color-default;
+        margin-top: 0;
+        margin-bottom: 0;
+        &:hover,
+        &:active {
+            background-color: $btn-primary-bg;
+            color: $btn-default-color;
+        }
+    }
+    .region-topbar {
+        border-bottom: 5px solid $gray;
+        height: 60px;
+        background-color: #FFF;
+        
+        /* Reset Layout Grid spacing */
+        .container-fluid {
+             padding: 0 $spacing-number;
+        }
+        .mx-navbar {
+            float: left;
+            margin-left: 55px;
+            background-color: transparent;
+            border: none;
+            @media (max-width: $screen-sm) {
+                float: none;
+                clear: both;
+            }
+            ul.nav { 
+                > li.mx-navbar-item > a {
+                    padding: 13px ($spacing-number * 1.5);
+                    line-height: 1.85em;
+                    margin: 0 ($spacing-number / 2);
+                }
+                .dropdown-menu {
+                    border: 5px solid $gray;
+                    border-radius: 0;
+                    -webkit-box-shadow: none;
+                    box-shadow:         none;
+                    font-size: 16px;
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        top: -15px;
+                        left: 5px;
+                        border-width: 0px 16px 15px 15px;
+                        border-style: solid;
+                        border-color: $gray transparent;
+                        display: block;
+                        width: 0;
+                    }
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        top: -9px;
+                        left: 10px;
+                        border-width: 0px 9px 9px 9px;
+                        border-style: solid;
+                        border-color: $color-layout-bg-white transparent;
+                        display: block;
+                        width: 0;
+                    }
+                    > li {
+                        padding:0;
+                        border-bottom: 1px solid $color-default;
+                        &:last-child {
+                            border-bottom: 0;
+                        }
+                        > a {
+                            text-decoration: none;
+                            color: $navtopbar-color;
+                            margin: ($spacing-number / 2) 0;
+                            padding: ($spacing-number / 2) $spacing-number;
+                        }
+                    }
+                    > li:last-child > a {
+                        border-bottom: none;
+                    }
+                }
+            }
+        }
+        .navbar-header {
+            @media (min-width: $screen-sm) {
+                float: none;
+            }
+            .menuContainer {
+                margin-left: 130px;
+            }
+        }
+        .toggle-btn {
+            float: left;
+            margin: 7px 8px 0 0;
+            min-width: 40px;
+            width: 40px;
+            height: 40px;
+            padding: $spacing-number;
+        }
+        .back-btn-holder {
+            margin: 7px 0 0 0;
+            float: left;
+            .mx-link {
+                margin: 0;
+                text-align: center;
+                min-width: 40px;
+                padding: $spacing-number;
+                width: 40px;
+                height: 40px;
+                color: $btn-default-color;
+                background: $btn-default-bg;
+                .glyphicon {
+                    line-height: 23px;
+                }
+            }
+        }
+    }
+}
+
+.menuHeader {
+    padding: $spacing-number 12px 7px 12px;
+    border-bottom: 5px solid $gray;
+}
+
+.logoMobile {
+    width: 130px;
+    float: right;
+    z-index: 9;
+    margin-top: -63px;
+}
+.logo-svg {
+    width: 100%;
+    padding-bottom: 39%;
+    background-image: url(../../img/Enexis-group-logo.svg);
+    background-size: cover;
+    img {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+.profile-desktop {
+    .desktopMenu {
+        display: inline-block;
+        visibility: visible;
+    }
+    .tabletMenu,
+    .phoneMenu,
+    .back-btn-holder,
+    .toggle-btn {
+        display: none;
+        visibility: hidden;
+    }
+    .logo {
+        width: 150px;
+        margin-top: -5px;
+        display: block;
+        visibility: visible;
+        position: absolute;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.th {
+    font-weight: bold;
+    background-color: $color-default;
+    color: $color-layout-bg-white;
+    border: 0;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: $spacing-number ($spacing-number * 2);
+}
+//****************************************************
+//  TEMPLATE PROJECT STYLING - COLOR CODE PAGE 
+//****************************************************
+.color-block {
+    height: 200px;
+    width: 100%;
+    display:block;
+} 
+.color-default {
+    background-color: $color-default;
+}
+.color-primary {
+    background-color: $color-primary;
+}
+.color-steun {
+    background-color: $color-steun;
+}
+.color-tekst {
+    background-color: $font-base-color;
+}
+.color-info {
+    background-color: $color-info;
+}
+.color-success {
+    background-color: $color-success;
+}
+.color-warning {
+    background-color: $color-warning;
+}
+.color-danger {
+    background-color: $color-danger;
+}
+.color-bg {
+    background-color: $bg-color;
+}
+.color-white {
+    background-color: $color-layout-bg-white;
+    border: 1px solid black;
+}
+.color-bgSec {
+    background-color: $bg-color-secondary;
+}
+//****************************************************
+//  END - TEMPLATE PROJECT STYLING - COLOR CODE PAGE 
+//****************************************************
+
+.summary {
+    @include font(bold); 
+    font-size: $font-size-large;
+    color: $color-default;
+}
+
+.breakWord {
+    word-wrap: break-word;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+.card .no-padding {
+    padding: 0 !important;
+}
+.card .card .no-padding {
+    padding: 0 !important;
+}
+
+.noLeftPadding {
+    padding-left: 0;
+}
+.noRightPadding {
+    padding-right: 0;
+}
+
+// Allround paddings
+.padding-xs {
+    padding: ($spacing-number / 2) !important;
+}
+.padding-s {
+    padding: $spacing-number !important;
+}
+.padding-m {
+    padding: ($spacing-number * 2) !important;
+}
+.padding-l {
+    padding: ($spacing-number * 3) !important;
+}
+.padding-xl {
+    padding: ($spacing-number * 4) !important;
+}
+// Top paddings
+.padding-top-xs {
+    padding-top: ($spacing-number / 2) !important;
+}
+.padding-top-s {
+    padding-top: $spacing-number !important;
+}
+.padding-top-m {
+    padding-top: ($spacing-number * 2) !important;
+}
+.padding-top-l {
+    padding-top: ($spacing-number * 3) !important;
+}
+.padding-top-xl {
+    padding-top: ($spacing-number * 4) !important;
+}
+// Right paddings
+.padding-right-xs {
+    padding-right: ($spacing-number / 2) !important;
+}
+.padding-right-s {
+    padding-right: $spacing-number !important;
+}
+.padding-right-m {
+    padding-right: ($spacing-number * 2) !important;
+}
+.padding-right-l {
+    padding-right: ($spacing-number * 3) !important;
+}
+.padding-right-xl {
+    padding-right: ($spacing-number * 4) !important;
+}
+// Bottom paddings
+.padding-bottom-xs {
+    padding-bottom: ($spacing-number / 2) !important;
+}
+.padding-bottom-s {
+    padding-bottom: $spacing-number !important;
+}
+.padding-bottom-m {
+    padding-bottom: ($spacing-number * 2) !important;
+}
+.padding-bottom-l {
+    padding-bottom: ($spacing-number * 3) !important;
+}
+.padding-bottom-xl {
+    padding-bottom: ($spacing-number * 4) !important;
+}
+// Left paddings
+.padding-left-xs {
+    padding-left: ($spacing-number / 2) !important;
+}
+.padding-left-s {
+    padding-left: $spacing-number !important;
+}
+.padding-left-m {
+    padding-left: ($spacing-number * 2) !important;
+}
+.padding-left-l {
+    padding-left: ($spacing-number * 3) !important;
+}
+.padding-left-xl {
+    padding-left: ($spacing-number * 4) !important;
+}
+
+// Allround paddings
+.margin-xs {
+    margin: ($spacing-number / 2) !important;
+}
+.margin-s {
+    margin: $spacing-number !important;
+}
+.margin-m {
+    margin: ($spacing-number * 2) !important;
+}
+.margin-l {
+    margin: ($spacing-number * 3) !important;
+}
+.margin-xl {
+    margin: ($spacing-number * 4) !important;
+}
+// Top paddings
+.margin-top-xs {
+    margin-top: ($spacing-number / 2) !important;
+}
+.margin-top-s {
+    margin-top: $spacing-number !important;
+}
+.margin-top-m {
+    margin-top: ($spacing-number * 2) !important;
+}
+.margin-top-l {
+    margin-top: ($spacing-number * 3) !important;
+}
+.margin-top-xl {
+    margin-top: ($spacing-number * 4) !important;
+}
+// Right paddings
+.margin-right-xs {
+    margin-right: ($spacing-number / 2) !important;
+}
+.margin-right-s {
+    margin-right: $spacing-number !important;
+}
+.margin-right-m {
+    margin-right: ($spacing-number * 2) !important;
+}
+.margin-right-l {
+    margin-right: ($spacing-number * 3) !important;
+}
+.margin-right-xl {
+    margin-right: ($spacing-number * 4) !important;
+}
+// Bottom paddings
+.margin-bottom-xs {
+    margin-bottom: ($spacing-number / 2) !important;
+}
+.margin-bottom-s {
+    margin-bottom: $spacing-number !important;
+}
+.margin-bottom-m {
+    margin-bottom: ($spacing-number * 2) !important;
+}
+.margin-bottom-l {
+    margin-bottom: ($spacing-number * 3) !important;
+}
+.margin-bottom-xl {
+    margin-bottom: ($spacing-number * 4) !important;
+}
+// Left paddings
+.margin-left-xs {
+    margin-left: ($spacing-number / 2) !important;
+}
+.margin-left-s {
+    margin-left: $spacing-number !important;
+}
+.margin-left-m {
+    margin-left: ($spacing-number * 2) !important;
+}
+.margin-left-l {
+    margin-left: ($spacing-number * 3) !important;
+}
+.margin-left-xl {
+    margin-left: ($spacing-number * 4) !important;
+}
+
+.profile-desktop .hiddenDesktop {
+    display: none;
+    visibility: hidden;
+}

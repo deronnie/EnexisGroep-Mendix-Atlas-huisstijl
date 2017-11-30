@@ -1,0 +1,342 @@
+/* ==========================================================================
+   Buttons
+
+   Default Bootstrap and Mendix Buttons
+========================================================================== */
+
+.btn,
+.mx-button {
+    display: inline-block;
+    margin-bottom: 0;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    color: $btn-default-color;
+    border: 1px solid transparent;
+    border-radius: $btn-border-radius;
+    background-color: $btn-default-bg;
+    background-image: none;
+    box-shadow: none;
+    text-shadow: none;
+    font-size: $btn-font-size;
+    line-height: $line-height-base;
+    
+    &:hover,
+    &:focus,
+    &:active {
+        outline: none;
+        box-shadow: none;
+    }
+
+    @if $btn-bordered != false {
+        @extend .btn-bordered;
+    }
+}
+
+// Mendix button link
+.mx-link {
+    padding: 0;
+    color: $link-color;
+    a {
+        color: inherit;
+    }
+}
+
+// Images and icons in buttons
+.btn,
+.mx-button,
+.mx-link {
+    img {
+        //height: auto; // MXUI override who set the height on 16px default
+        height: $font-size-default + 4px;
+        margin-top: -1px;
+        margin-right: 5px;
+    }
+    .glyphicon {
+        //margin-right: 5px;
+    }
+}
+
+// IE 8 only (mxui overwrites)
+.dj_ie8 .mx-link {
+    margin-right: 0;
+    white-space: normal;
+}
+
+//== Design Properties
+//## Helper classes to change the look and feel of the component
+//-------------------------------------------------------------------------------------------------------------------//
+// Color variations 
+.btn,
+.btn-default {
+    @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border-color, $btn-primary-color, $btn-default-bg-hover, $btn-primary-border-color);
+}
+.card .card .btn-default,
+.btn-white {
+    color: $btn-default-color;
+    background-color: $btn-white-bg;
+    border-color: $btn-white-border-color;
+    &:hover,
+    &.hover,
+    &:active,
+    &.active {
+        color: $btn-primary-color;
+        background-color: $btn-primary-bg;
+        border-color: $btn-primary-border-color;
+        box-shadow: none;
+        outline: none;
+    }
+    &:focus {
+        color: $btn-default-color;
+        background-color: $color-layout-bg-white;
+        border-color: $color-layout-bg-white;
+    }
+}
+.btn-primary {
+    @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border-color, $btn-primary-color, $btn-primary-bg-hover, $btn-primary-border-color-hover);
+}
+
+.btn-inverse {
+    @include button-variant($btn-inverse-color, $btn-inverse-bg, $btn-inverse-border-color, $btn-default-color, $btn-inverse-bg-hover, $btn-inverse-border-color-hover);
+}
+
+.btn-success {
+    @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border-color, $btn-success-color, $btn-success-bg-hover, $btn-success-border-color-hover);
+}
+
+.btn-info {
+    @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border-color, $btn-info-color, $btn-info-bg-hover, $btn-info-border-color-hover);
+}
+
+.btn-warning {
+    @include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border-color, $btn-warning-color, $btn-warning-bg-hover, $btn-warning-border-color-hover);
+}
+
+.btn-danger {
+    @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border-color, $btn-danger-color, $btn-danger-bg-hover, $btn-danger-border-color-hover);
+}
+
+/* Secondary buttons */
+.btn-secondary {
+    color: $color-primary;
+    border: 1px solid $color-primary;
+    background: transparent;
+    &:focus {
+        color: $color-primary;
+        border: 1px solid $color-primary;
+        background: transparent;
+    }
+    &:hover,
+    &.hover,
+    &:active,
+    &.active,
+    &:active:focus,
+    &:hover:focus {
+        color: $color-default;
+        border: 1px solid $color-default;
+        background: transparent;
+    }
+    &.disabled {
+        color: $color-primary;
+        border: 1px solid $color-primary;
+        background: transparent;
+        opacity: 0.5;
+    }
+
+}
+
+
+// Button Sizes
+.btn-lg {
+    padding-right: ($spacing-number * 3);  // only for buttons
+    padding-left: ($spacing-number * 3);
+}
+
+.btn-sm {
+    font-size: $font-size-small;
+    padding: $spacing-number;
+}
+
+.btn-block {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    display: block;
+}
+
+.big-btn {
+    height: 96px !important;
+    width: 100%;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    > .glyphicon {
+        margin-right: ($spacing-number * 2);
+        margin-left: ($spacing-number * 2);
+        top: 4px;
+        min-width: ($spacing-number * 4);
+        font-size: ($spacing-number * 4);
+        color: $color-steun;
+        transition: all .2s ease-in-out;
+    }
+    &:hover > .glyphicon,
+    &.hover > .glyphicon,
+    &:active > .glyphicon,
+    &:focus > .glyphicon {
+        color: $btn-primary-color;
+    }
+}
+
+.square-btn {
+    height: 160px !important;
+    width: 160px;
+    text-align: center;
+    line-height: 18px;
+    white-space: normal;
+    > .glyphicon {
+        font-size: 72px;
+        display: block;
+        margin-right: 0;
+        line-height: 102px;
+        color: $color-steun;
+        transition: all .2s ease-in-out;
+    }
+    &:hover > .glyphicon,
+    &.hover > .glyphicon,
+    &:active > .glyphicon,
+    &:focus > .glyphicon {
+      color: $btn-primary-color;
+    }
+}
+
+
+
+// Button Image 
+.btn-image {
+    padding: 0;
+    border-style: none;
+    background-color: transparent;
+    vertical-align: middle; 
+
+    img {
+        height: auto; // Image set height
+        display: block; // or else the button doesn't get a width 
+        visibility: visible;
+    }
+
+    &:hover {
+        background-color: transparent;
+    }
+}
+
+
+/* Buttons Position */
+.btn-right {
+    margin-right: 0 !important;
+    margin-left: $spacing-number !important;
+    float: right;
+}
+.btn-left {
+    margin-left: 0 !important;
+    margin-right: $spacing-number !important;
+}
+
+
+// Icon buttons
+.btn-icon {
+    > span {
+        margin: 0;
+    }
+}
+.btn-icon-right {
+    > span {
+        float: right;
+        margin-left: 5px;
+    }
+}
+.btn-icon-top {
+    padding-left: 0;
+    padding-right: 0;
+    > span {
+        display: block;
+        margin: 0 0 5px 0;
+    }
+}
+
+
+// Form specific buttons 
+.mx-referencesetselector-select-button {
+    @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border-color, $btn-default-color, $btn-default-bg-hover, $btn-default-border-color);
+    margin-top: 0;
+    margin-right: 1px;
+    &:hover,
+    &:active,
+    &.active,
+    &:focus {
+        background-color: $btn-default-bg;
+        border-color: $btn-default-border-color;
+        box-shadow: none;
+        outline: none;
+    }
+}
+
+.mx-fileinput-upload-button {
+    @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border-color, $btn-default-color, $btn-default-bg-hover, $btn-default-border-color);
+    &:hover,
+    &:active,
+    &.active,
+    &:focus {
+        background-color: $btn-default-bg;
+        border-color: $btn-default-border-color;
+        box-shadow: none;
+        outline: none;
+    }
+}
+    // Buttons appear disabled 
+.btn-disabled {
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+
+//== Phone specific 
+//-------------------------------------------------------------------------------------------------------------------//
+.profile-phone {
+    .btn,
+    .mx-link {
+        -webkit-transition: all 0.2s;
+        -moz-transition: all 0.2s;
+        transition: all 0.2s;
+        &:active {
+            -webkit-transform: translateY(1px);
+            transform: translateY(1px);
+        }
+    }
+    .big-btn {
+        height: 72px !important;
+    }
+
+    .square-btn {
+        height: 104px !important;
+        width: 104px;
+        text-align: center;
+        > .glyphicon {
+            font-size: 40px;
+            display: block;
+            line-height: 56px;
+        }
+    }
+}

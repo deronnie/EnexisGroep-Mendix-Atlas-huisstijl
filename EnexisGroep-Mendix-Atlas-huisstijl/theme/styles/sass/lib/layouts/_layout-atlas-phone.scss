@@ -1,0 +1,57 @@
+/* ==========================================================================
+   Atlas layout
+   
+   Extra styling for phone layouts
+========================================================================== */
+.profile-phone {
+    .phoneMenu {
+        display: inline-block;
+        width: 100%;
+        visibility: visible;
+    }
+    .desktopMenu,
+    .tabletMenu,
+    .logo {
+        display: none;
+        visibility: hidden;
+    }
+    .mx-scrollcontainer-move-in, .mx-scrollcontainer-move-out {
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -ms-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+        z-index: 99;
+    }
+    .mx-scrollcontainer-open {
+        z-index: 99;
+    }
+    .sprintrFeedbackNode {
+        font-family: FontAwesome;
+        background: rgba(255,2555,2555,0.4) url(../../../img/megaphone.svg) 7px 7px no-repeat;
+        background-size: 22px;
+        border: 1px solid $color-default;
+        height: 35px;
+        width: 35px;
+        position: relative;
+        float: right;
+        z-index: 1;
+        top: 10px;
+        margin-right: 8px;
+        padding-top: 7px;
+        color: $color-default;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    .sprintrFeedbackContainer {
+        top: 8px !important;
+    }
+    .summary {
+        font-size: $font-base-size;
+    }
+}
+.profile-phone .hiddenPhone,
+.profile-tablet .hiddenTablet {
+    display: none;
+    visibility: hidden;
+}

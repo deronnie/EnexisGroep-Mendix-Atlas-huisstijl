@@ -1,0 +1,63 @@
+@mixin button-variant($color, $background, $border, $hovercolor, $hoverbg, $hoverborder) {
+    color: $color;
+    border-color: $border;
+    background-color: $background;
+    text-transform: uppercase;
+    @include font(bold);
+    &:hover,
+    &:focus,
+    &:active,
+    &.active,
+    .open > &.dropdown-toggle {
+        color: $hovercolor;
+        border-color: $hoverborder;
+        background-color: $hoverbg;
+    }
+    &:active,
+    &.active,
+    .open > &.dropdown-toggle {
+        background-image: none;
+    }
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] {
+        &,
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            border-color: $border;
+            background-color: $background;
+        }
+    }
+    // Button bordered
+    &.btn-bordered {
+        background-color: transparent;
+        @if $color != $btn-default-color {
+            color: $border;
+        }
+        &:hover,
+        &:focus,
+        &:active,
+        &.active,
+        .open > &.dropdown-toggle {
+            color: $color;
+            border-color: $border;
+            background-color: $border;
+        }
+    }
+    // Button as link
+    &.btn-link {
+        text-decoration: none;
+        border-color: transparent;
+        background-color: transparent;
+        @if $color != $btn-default-color {
+            color: $background;
+        }
+        &:hover {
+            border-color: $btn-link-bg-hover;
+            background-color: $btn-link-bg-hover;
+            color: darken($color, 33%);
+        }
+    }
+}

@@ -1,0 +1,97 @@
+/* ==========================================================================
+   Pageheader
+========================================================================== */
+
+//== Default
+//-------------------------------------------------------------------------------------------------------------------//
+.pageheader {
+    padding-bottom: 0 !important;
+    //== Elements
+    //-------------------------------------------------------------------------------------------------------------------//
+    .pageheader-type {
+        margin: 0;
+    }
+
+    .pageheader-title,
+    h1, .h1, h2, .h2,
+    h3, .h3, h4, .h4 {
+        margin-bottom: 0;
+        margin-top: 0;
+        font-size: $font-size-h1;
+    }
+
+    .pageheader-subtitle {
+        color: $font-color-header;
+        font-size: 18px;
+    }
+    .mx-layoutgrid {
+        padding-bottom: 0 !important;
+    }
+}
+
+.mobilePageheader {
+    display: none;
+    visibility: hidden;
+}
+// Check if it is part of a inner layoutgrid
+// .mx-scrollcontainer .mx-placeholder .mx-layoutgrid .pageheader {
+//     @include layout-spacing($type: margin, $direction: bottom, $device: responsive);
+//     @include layout-spacing($type: padding, $direction: bottom, $device: responsive);
+//     background: transparent;
+// }
+
+//== Varations
+//-------------------------------------------------------------------------------------------------------------------//
+.pageheaderwithcontrols {
+    .controlgroup {
+    }
+}
+
+.pageheaderwithimage {
+    padding-bottom: $spacing-number !important;
+    .pageheader-image {
+    }
+    .figurecontent {
+    }
+}
+
+.pageheaderwithimageandcontrols {
+    padding-bottom: $spacing-number !important;
+}
+
+.pageheaderwithsearch {
+    .pageheader-title {
+        margin-bottom: 1em;
+    }
+}
+
+.pageheaderwithbreadcrumb {
+    .breadcrumb {
+    }
+}
+
+.profile-phone,
+.profile-tablet {
+    .mobilePageheader {
+        display: -webkit-flex;
+        display:         flex;
+        visibility: visible;
+        background: $color-layout-bg-white;
+        width: calc(100% - 91px);
+        .mx-header-center {
+            margin: 0 auto;
+            padding-top: 7px;
+            overflow: hidden;
+        }
+        h1 {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 18px
+        }
+    }
+    .pageheader {
+        display: none;
+        visibility: hidden;
+    }
+}

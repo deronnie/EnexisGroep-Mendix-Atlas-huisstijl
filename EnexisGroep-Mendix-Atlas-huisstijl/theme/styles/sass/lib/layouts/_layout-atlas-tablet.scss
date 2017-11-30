@@ -1,0 +1,26 @@
+/* ==========================================================================
+   Atlas layout
+   
+   Extra styling for tablet layouts
+========================================================================== */
+.layout-atlas-tablet {
+	.tabletMenu {
+		display: inline-block;
+		width: 100%;
+		visibility: visible;
+	}
+	.desktopMenu,
+	.phoneMenu,
+	.logo {
+		display: none;
+		visibility: hidden;
+	}
+	.summary {
+	    font-size: $font-base-size;
+	}
+}
+
+
+
+
+// Custom styling Phone AND Tablet in layout-atlas-phone

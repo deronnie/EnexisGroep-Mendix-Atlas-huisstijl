@@ -1,0 +1,114 @@
+/* ==========================================================================
+   Grid
+
+   Default Mendix Grid (used for Mendix Datagrid)
+========================================================================== */
+
+.mx-grid {
+    padding: 0px;
+    border: 0;
+    border-radius: 0;
+    .mx-grid-controlbar {
+        margin: 0;
+        /* Paging */
+        .mx-grid-pagingbar {
+            margin-top:12px;
+            /* Buttons */
+            .mx-button {
+                padding: 0;
+                min-width: 36px;
+                background-color: $grid-paging-bg !important;
+                color: $grid-paging-color;
+                border-color: $grid-paging-border-color;
+                margin: 0 2px; 
+
+                &:hover {
+                    background-color: $grid-paging-bg-hover !important;
+                    color: $grid-paging-color-hover;
+                    border-color: $grid-paging-border-color-hover;
+                }
+
+                &.disabled, 
+                &[disabled] {
+                    color: $gray-darker;
+                }
+            }
+            /* Text Paging .. to .. to .. */
+            .mx-grid-paging-status {
+                padding: 2px $spacing-number 1px $spacing-number;
+            }
+        }
+    }
+    .mx-grid-searchbar {
+        padding: $spacing-number 0;
+        background-color: $bg-color-secondary;
+        margin: 0 0 $spacing-number 0;
+        .mx-grid-search-item {
+                display:         inline-flex;
+                display: -webkit-inline-flex;
+                margin: ($spacing-number / 2) 0;
+                align-items: center;
+            .mx-grid-search-label {
+                vertical-align: middle;
+                label { 
+                    padding-top: ($spacing-number / 2); 
+                    line-height: 15px;
+                }
+            }
+            .mx-grid-search-input {
+                padding: 0;
+                width: 167px;
+                .form-control {
+                    height: 40px;
+                    overflow:hidden;
+                }
+                select.form-control {
+                    vertical-align: middle;
+                    padding: ($spacing-number / 2);
+                }
+                .mx-button {
+                    height: 40px;
+                    border: 1px solid $form-input-border-color;
+                    padding-top: ($spacing-number / 2);
+                    padding-bottom: ($spacing-number / 2);
+                    margin: 0 0 0 -1px;
+                }
+                .mx-dateinput-select-button {
+                    
+                }
+            }
+        }
+        .mx-button {
+            background-color: $btn-white-bg;
+            height: 40px;
+            margin:($spacing-number / 2);
+            border-color: $btn-white-border-color;
+            &:hover,
+            &:active {
+                background-color: $btn-white-bg-hover;
+                color: $btn-primary-color !important;
+                border-color: $btn-white-border-color-hover;
+            }
+        }
+        .mx-grid-search-button {
+            background-color: $btn-primary-bg;
+            float: right;
+            color: $btn-primary-color;
+            border-color: $btn-primary-border-color;
+            margin-right: ($spacing-number * 2);
+            &:hover,
+            &:active {
+                background-color: $btn-primary-bg-hover;
+                margin-right: ($spacing-number * 2);
+                color: $btn-primary-color !important;
+                border-color: $btn-primary-border-color-hover;
+            }
+        }
+    }
+}
+
+
+// Remove default border from grid inside a Mendix Dataview 
+.mx-dataview .mx-grid {
+    border: 0;
+}

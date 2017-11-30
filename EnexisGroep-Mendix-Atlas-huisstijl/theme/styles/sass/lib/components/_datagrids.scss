@@ -1,0 +1,228 @@
+/* ==========================================================================
+   Datagrid Default
+
+   Default Mendix Datagrid Widget. The datagrid shows a list of objects in a grid
+========================================================================== */
+
+.mx-datagrid {
+    .mx-datagrid-head-table {
+        border-width: 0;
+        background-color: transparent;
+        /* Table header */
+        th {
+            background-color: $color-default;
+            color: $font-color-white; 
+            border: 0;
+        }
+        .mx-datagrid-head-wrapper {
+            padding: $grid-padding-top $grid-padding-right $grid-padding-bottom $grid-padding-left;
+            vertical-align: middle;
+            .mx-datagrid-head-caption {
+                white-space: normal;
+            }
+        }
+    }
+    .mx-datagrid-body-table {
+        border-width: 0;
+        /* Table Body */
+        .mx-datagrid-body tr {
+            td {
+                padding: $padding-table-cell-top $padding-table-cell-right $padding-table-cell-bottom $padding-table-cell-left;
+                background-color: $grid-bg;
+                border-width: 0;
+                &:focus {
+                    outline: none;
+                }
+                /* Text without spaces */
+                .mx-datagrid-data-wrapper {
+                    text-overflow: ellipsis;
+                }
+            }
+            &:nth-child(odd) td {
+                background-color: $grid-bg-striped;
+            }
+            &:hover td {
+                background-color: $grid-bg-hover !important;
+                color: $grid-hover-color;
+            }
+            &.selected td {
+                background-color: $grid-bg-selected !important;
+                color: $grid-selected-color;
+            }
+            &.selected:hover td {
+                background-color: $grid-bg-selected-hover !important;
+                color: $grid-selected-color;
+            }
+        }
+        /* Table Footer */
+        .mx-datagrid-foot {
+            > tr > th {
+                padding: $grid-padding-top $grid-padding-right $grid-padding-bottom $grid-padding-left;
+                border-width: 0;
+                background-color: $grid-footer-bg;
+            }
+            > tr > td {
+                padding: $grid-padding-top $grid-padding-right $grid-padding-bottom $grid-padding-left;
+                border-width: 0;
+                background-color: $grid-bg;
+                font-weight: $font-weight-bold;
+            }
+        }
+        & *:focus {
+            outline: 0;
+        }
+    }
+}
+
+//== Design Properties
+//## Helper classes to change the look and feel of the component
+//-------------------------------------------------------------------------------------------------------------------//
+// Striped style
+.datagrid-striped.mx-datagrid {
+    .mx-datagrid-head-table {
+        th { 
+            background-color: $color-default;
+            color: $font-color-white;
+            text-transform: uppercase;
+        }
+        .mx-datagrid-head-wrapper {
+            
+        }
+    }
+    .mx-datagrid-body-table {
+        .mx-datagrid-body tr {
+            td {
+                border-top-width: 0;
+            }
+            &:nth-child(odd) td {
+                background-color: $grid-bg-striped;
+            }
+        }
+    }
+}
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: $color-layout-bg-white;
+}
+
+// Bordered style
+.datagrid-bordered.mx-datagrid {
+    .mx-datagrid-head-table {
+        th {
+            border: 1px solid $grid-border-color;
+            border-bottom-width: 1px;
+        }
+    }
+    .mx-datagrid-body-table {
+        border: 1px solid;
+        .mx-datagrid-body tr {
+            td {
+                border: 1px solid $grid-border-color;
+            }
+        }
+    }
+    .mx-datagrid-foot {
+        > tr > th {
+            border-width: 0;
+            background-color: $grid-footer-bg;
+        }
+        > tr > td {
+            border-width: 1px;
+        }
+    }
+}
+
+// Transparent style so you can see the background
+.datagrid-transparent.mx-datagrid {
+    .mx-datagrid-head-table {
+        background-color: transparent;
+    }
+    .mx-datagrid-body-table {
+        .mx-datagrid-body tr {
+            &:nth-of-type(odd) {
+                background-color: transparent;
+            }
+            td {
+                background-color: transparent;
+            }
+        }
+    }
+}
+
+// Hover style activated
+.datagrid-hover.mx-datagrid {
+    .mx-datagrid-body-table {
+        .mx-datagrid-body tr {
+            &:hover td {
+                background-color: $grid-bg-hover !important;
+            }
+            &.selected td {
+                background-color: $grid-bg-selected !important;
+            }
+            &.selected:hover td {
+                background-color: $grid-bg-selected-hover !important;
+            }
+        }
+    }
+}
+
+// Datagrid Row Sizes
+.datagrid-lg.mx-datagrid {
+    .mx-datagrid-head-table {
+        .mx-datagrid-head-wrapper {
+            padding: ($grid-padding-top * 2) $grid-padding-right ($grid-padding-bottom * 2) ($grid-padding-left * 2);
+        }
+    }
+    .mx-datagrid-body-table {
+        .mx-datagrid-body tr {
+            td {
+                padding: ($grid-padding-top * 2) $grid-padding-right ($grid-padding-bottom * 2) ($grid-padding-left * 2);
+            }
+        }
+    }
+}
+
+.datagrid-sm.mx-datagrid {
+    .mx-datagrid-head-table {
+        .mx-datagrid-head-wrapper {
+            padding: ($grid-padding-top / 2) ($grid-padding-right / 4) ($grid-padding-bottom / 2) ($grid-padding-left / 2);
+        }
+    }
+    .mx-datagrid-body-table {
+        .mx-datagrid-body tr {
+            td {
+                padding: ($grid-padding-top / 2) ($grid-padding-right / 4) ($grid-padding-bottom / 2) ($grid-padding-left / 2);
+            }
+        }
+    }
+}
+
+// Datagrid Full Search
+// Default Mendix Datagrid Widget with adjusted search field. Only 1 search field is allowed
+.datagrid-fullsearch.mx-grid {
+    .mx-grid-search-button {
+        @extend .btn-primary;
+    }
+    .mx-grid-reset-button {
+        display: none;
+    }
+    .mx-grid-search-item {
+        display: block;
+    }
+    .mx-grid-search-label {
+        display: none;
+    }
+    .mx-grid-searchbar {
+        .mx-grid-search-controls {
+            position: absolute;
+            right: 0;
+        }
+        .mx-grid-search-input {
+            width: 80%;
+            padding-left: 0;
+            .form-control {
+                height: 35px;
+                font-size: 12px;
+            }
+        }
+    }
+}
